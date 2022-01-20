@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+<body class="body-container">
+  <div class="main-info">
+    <h2>Background Color: <span class="main-color-name">white</span></h2>
+  </div>
+  <button class="main-button" onclick="changeColor()">CLICK ME</button>
+</body>
+
+<script>
+  let style = document.getElementsByClassName('body-container')[0].style;
+  let textBox = document.getElementsByClassName('main-color-name')[0]
+  
+  let colors = [
+    { name: 'red', r: '255', g: '51',b: '51' },
+    { name: 'orange', r: '255', g: '153', b: '51' },
+    { name: 'yellow', r: '255', g: '255', b: '51' },
+    { name: 'green', r: '153', g: '255', b: '51' },
+    { name: 'blue', r: '51', g: '51', b: '255' },
+    { name: 'purple', r: '153', g:'51', b: '255' },
+    { name: 'pink', r: '255', g: '51', b: '255' },
+    { name: 'gray', r: '160', g: '160', b: '160' },
+    { name: 'white', r: '255', g: '255', b: '255' },
+  ]
+
+  function changeColor() {
+    let newColor = colors[Math.floor(Math.random() * colors.length)]
+
+    textBox.textContent = newColor.name      
+    style.backgroundColor = `rgb(${newColor.r}, ${newColor.g}, ${newColor.b})`
+  }
+</script>
+</html>

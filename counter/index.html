@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+<body class="body-container">
+  <h2 class="title">Counter</h2>
+  <h1 class="number">0</h1>
+  <div class="buttons">
+    <button class="button" onclick="decrease()">DECREASE</button>
+    <button class="button" onclick="reset()">RESET</button>
+    <button class="button" onclick="increase()">INCREASE</button>
+  </div>
+</body>
+
+<script>
+  let numberText = document.getElementsByClassName('number')[0]
+  let number = 0
+
+  function increase() {
+    number++
+    numberControl()
+  }
+
+  function decrease() {
+    number--
+    numberControl()
+  }
+
+  function reset() {
+    number = 0
+    numberControl()
+  }
+
+  function numberControl() {
+    numberText.textContent = number 
+    numberText.style.color = `rgb(${numberColor(number)})`
+  }
+
+  function numberColor(num) {
+    const green = '72, 167, 11'
+    const red = '255, 51, 51'
+    const blue = '16, 43, 66'
+
+    if (num > 0) {
+      return green
+    } else if (num < 0) {
+      return red
+    } else {
+      return blue
+    }
+  }
+</script>
+</html>
