@@ -4,10 +4,77 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta rel="stylesheet" href="./index.css">
+  <script type="text/javascript" src="persons.js"></script> 
+  <link rel="stylesheet" href="./index.css">
   <title>Document</title>
 </head>
 <body>
-  
+  <div class="header">
+    <h2 class="header__title">Our Reviews</h2>
+    <div class="header__underline"></div>
+  </div>
+  <div class="carousel">
+    <div class="carousel__profile">
+      <img class="profile__img" src="./images/1profile_pic.jpg"/>
+      <h3 class="profile__name"></h3>
+      <h4 class="profile__role"></h4>
+      <p class="profile__desc"></p>
+    </div>
+    <div class="carousel__actions">
+      <h2 class="carousel__actions--button" onclick="decrease()" ><</h2>
+      <h2 class="carousel__actions--button" onclick="increase()">></h2>
+    </div>
+    <button class="carousel__random" onclick="random()"> Surprise Me</button>
+  </div>
 </body>
+<script>
+  let index = 0
+
+  let name = document.querySelector('.profile__name')
+  let role = document.querySelector('.profile__role')
+  let desc = document.querySelector('.profile__desc')
+  let img = document.querySelector('.profile__img')
+
+  name.textContent = persons[0].name
+  role.textContent = persons[0].role
+  desc.textContent = persons[0].desc
+  img.src = persons[0].img
+
+  function increase() {
+    if (index === persons.length - 1) {
+      index = 0
+    } else {
+      index++
+    }
+
+    redefinePerson(persons[index])
+  }
+
+  function decrease() {
+    if (index === 0) {
+      index = persons.length - 1
+    } else {
+      index--
+    }
+
+    redefinePerson(persons[index])
+  }
+
+  function random() {
+    let array = [0, 1, 2, 3, 4, 5]
+    array.splice(index, 1)
+
+    index = array[Math.floor(Math.random() * array.length)];
+
+    redefinePerson(persons[index])
+  }
+
+  function redefinePerson(person) {
+    name.textContent = person.name
+    role.textContent = person.role
+    desc.textContent = person.desc
+    img.src = person.img
+  }
+
+</script>
 </html>
