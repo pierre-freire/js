@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script type="text/javascript" src="persons.js"></script> 
+  <script type="text/javascript" src="reviews.js"></script> 
   <link rel="stylesheet" href="./index.css">
   <title>Document</title>
 </head>
@@ -18,7 +18,7 @@
       <img class="profile__img" src="./images/1profile_pic.jpg"/>
       <h3 class="profile__name"></h3>
       <h4 class="profile__role"></h4>
-      <p class="profile__desc"></p>
+      <p class="profile__review"></p>
     </div>
     <div class="carousel__actions">
       <h2 class="carousel__actions--button" onclick="decrease()" ><</h2>
@@ -32,48 +32,50 @@
 
   let name = document.querySelector('.profile__name')
   let role = document.querySelector('.profile__role')
-  let desc = document.querySelector('.profile__desc')
+  let review = document.querySelector('.profile__review')
   let img = document.querySelector('.profile__img')
 
-  name.textContent = persons[0].name
-  role.textContent = persons[0].role
-  desc.textContent = persons[0].desc
-  img.src = persons[0].img
+  name.textContent = reviews[0].name
+  role.textContent = reviews[0].role
+  review.textContent = reviews[0].review
+  img.src = reviews[0].img
 
   function increase() {
-    if (index === persons.length - 1) {
+    if (index === reviews.length - 1) {
       index = 0
     } else {
       index++
     }
 
-    redefinePerson(persons[index])
+    redefineReview(reviews[index])
   }
 
   function decrease() {
     if (index === 0) {
-      index = persons.length - 1
+      index = reviews.length - 1
     } else {
       index--
     }
 
-    redefinePerson(persons[index])
+    redefineReview(reviews[index])
   }
 
   function random() {
-    let array = [0, 1, 2, 3, 4, 5]
-    array.splice(index, 1)
+    let random
 
-    index = array[Math.floor(Math.random() * array.length)];
+    do {
+      random = Math.floor(Math.random() * reviews.length);
+    } while (index === random)
 
-    redefinePerson(persons[index])
+    index = random
+    redefineReview(reviews[random])
   }
 
-  function redefinePerson(person) {
-    name.textContent = person.name
-    role.textContent = person.role
-    desc.textContent = person.desc
-    img.src = person.img
+  function redefineReview(newReview) {
+    name.textContent = newReview.name
+    role.textContent = newReview.role
+    review.textContent = newReview.review
+    img.src = newReview.img
   }
 
 </script>
