@@ -1,0 +1,51 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ab1e24215c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <div class="menu-icon" onclick="setOpen()">
+    <i class="fa-solid fa-bars"></i>
+  </div>
+  <div class="side-bar">
+    <div class="side-bar__options">
+      <div class="side-bar__logo">
+        <h1 class="logo-text">Coding <span class="logo-text--addict">Addict</span></h1>
+        <i class="fa-solid fa-xmark" onclick="setOpen()"></i>
+      </div>
+      <h2 class="side-bar__options--item">Home</h2>
+      <h2 class="side-bar__options--item">About</h2>
+      <h2 class="side-bar__options--item">Projects</h2>
+      <h2 class="side-bar__options--item">Contact</h2>
+    </div>
+    <div class="side-bar__social-icons">
+      <i class="fa-brands fa-facebook"></i>
+      <i class="fa-brands fa-twitter"></i>
+      <i class="fa-brands fa-linkedin"></i>
+      <i class="fa-solid fa-share-nodes"></i>
+      <i class="fa-brands fa-google-plus-g"></i>
+    </div>
+  </div>
+  <script>
+    let open = false
+
+    function setOpen() {
+      open = !open
+      let sideBar = document.querySelector(".side-bar")
+      let menuIcon = document.querySelector(".menu-icon")
+
+      if (open) {
+        sideBar.classList.add("open")
+        menuIcon.classList.add("open")
+      } else {
+        sideBar.classList.remove("open")
+        menuIcon.classList.remove("open")
+      }
+    }
+  </script>
+</body>
+</html>
