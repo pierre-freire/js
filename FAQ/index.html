@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/ab1e24215c.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="index.css">
+  <title>Document</title>
+</head>
+<body>
+  <h2>General Questions</h2>
+  <div class="answer">
+    <div class="answer-header">
+      <h3>Do you accept all major credit cards?</h3>
+      <button class="answer-button">
+        <i class="fa-solid fa-circle-plus"></i>
+      </button>
+    </div>
+    <div class="answer-body">
+      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+        venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
+    </div>
+  </div>
+  <div class="answer">
+    <div class="answer-header">
+      <h3>Do you accept all major credit cards?</h3>
+      <button class="answer-button">
+        <i class="fa-solid fa-circle-plus"></i>
+      </button>
+    </div>
+    <div class="answer-body">
+      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+        venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
+    </div>
+  </div>
+  <div class="answer">
+    <div class="answer-header">
+      <h3>Do you accept all major credit cards?</h3>
+      <button class="answer-button">
+        <i class="fa-solid fa-circle-plus"></i>
+      </button>
+    </div>
+    <div class="answer-body">
+      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+        venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
+    </div>
+  </div>
+</body>
+<script>
+  const answers = document.getElementsByClassName('answer')
+
+  Array.from(answers).forEach(elm => {
+    elm.addEventListener('click', () => {
+      const icon = elm.querySelector('.fa-solid')
+      const answerBody = elm.querySelector('.answer-body')
+
+      icon.classList.toggle('fa-circle-plus')
+      icon.classList.toggle('fa-circle-minus')
+
+      answerBody.classList.toggle('open')
+    })
+  });
+</script>
+</html>
