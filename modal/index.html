@@ -8,5 +8,38 @@
   <title>Document</title>
 </head>
 <body>
+  <div class="container">
+    <h3 class="container__title">Modal Project</h3>
+    <button class="container__button" data-controller="visibility">Open Modal</button>
+  </div>
+  <div class="modal">
+    <div class="modal-container">
+      <button class="modal__close-button" data-controller="visibility">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <h3>Modal Content</h3>
+    </div>
+  </div>
 </body>
+<script>
+  const $btns = document.querySelectorAll("[data-controller]");
+  const $modal = document.querySelector(".modal")
+  let visible = false
+
+  $btns.forEach((elm) => {
+    elm.addEventListener('click', () => {
+      handleModalVisibility()
+    })
+  })
+
+  function handleModalVisibility () {
+    visible = !visible
+  
+    if(visible) {
+      $modal.classList.add("visible")
+    } else {
+      $modal.classList.remove("visible")
+    }
+  }
+</script>
 </html>
