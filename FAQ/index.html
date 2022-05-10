@@ -9,7 +9,7 @@
 </head>
 <body>
   <h2>General Questions</h2>
-  <div class="answer">
+  <div class="answer" data-answer>
     <div class="answer-header">
       <h3>Do you accept all major credit cards?</h3>
       <button class="answer-button">
@@ -17,11 +17,11 @@
       </button>
     </div>
     <div class="answer-body">
-      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+      <p class="answer-body__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
         venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
     </div>
   </div>
-  <div class="answer">
+  <div class="answer" data-answer>
     <div class="answer-header">
       <h3>Do you accept all major credit cards?</h3>
       <button class="answer-button">
@@ -29,11 +29,11 @@
       </button>
     </div>
     <div class="answer-body">
-      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+      <p class="answer-body__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
         venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
     </div>
   </div>
-  <div class="answer">
+  <div class="answer" data-answer>
     <div class="answer-header">
       <h3>Do you accept all major credit cards?</h3>
       <button class="answer-button">
@@ -41,15 +41,15 @@
       </button>
     </div>
     <div class="answer-body">
-      <p class="answer-body--paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
+      <p class="answer-body__paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sagittis dictum mauris in 
         venenatis. Nulla pretium venenatis augue, in cursus felis posuere nec.</p>
     </div>
   </div>
 </body>
 <script>
-  const answers = document.getElementsByClassName('answer')
+  const $answers = document.querySelectorAll('[data-answer]')
 
-  Array.from(answers).forEach(elm => {
+  $answers.forEach(elm => {
     elm.addEventListener('click', () => {
       const icon = elm.querySelector('.fa-solid')
       const answerBody = elm.querySelector('.answer-body')
