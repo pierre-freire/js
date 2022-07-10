@@ -1,0 +1,61 @@
+html {
+  height: 100%;
+}
+
+.body-container {
+  height: 100%;
+  margin: 0;
+}
+
+.options {
+  height: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+}
+
+.colors {
+  background-color: greenyellow;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.color-button {
+  border: none;
+  cursor: pointer;
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+}
+
+.color-button.red {
+  background-color: red;
+}
+
+.color-button.blue {
+  background-color: blue;
+}
+
+.color-button.purple {
+  background-color: purple;
+}
+
+.color-button.green {
+  background-color: green;
+}
+
+.color-button.black {
+  background-color: black;
+}
+
+.brush-size {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.brush-input {
+  cursor: pointer;
+}

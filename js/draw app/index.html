@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./index.css">
+  <title>Document</title>
+</head>
+  <body class="body-container">
+    <div class="options">
+      <div class="colors" data-buttons>
+        <button class="color-button red" data-color="red" />
+        <button class="color-button blue" data-color="blue" />
+        <button class="color-button purple" data-color="purple" />
+        <button class="color-button green" data-color="green" />
+        <button class="color-button black" data-color="black" />
+      </div>
+      <div class="brush-size">
+        <input class="brush-input" type="range" min="1" max="3" step="0.2" data-id="line-size"/>
+      </div>
+    </div>
+    <canvas id="canvas"></canvas>
+    <script src="./index.js"></script> 
+  </body>
+</html>
