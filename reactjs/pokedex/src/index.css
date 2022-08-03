@@ -1,0 +1,14 @@
+html, body, #app, #root, #app>div {
+  height: 100%;
+  margin: 0;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2, h3, p {
+  margin: 0;
+}

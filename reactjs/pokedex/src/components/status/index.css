@@ -1,0 +1,50 @@
+.status-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 4px 8px;
+}
+
+.status-box {
+  display: grid;
+  grid-template-columns: 2fr 1fr 3fr;
+  margin: 8px 0;
+}
+
+.status-name {
+  text-align: left;
+}
+
+.status-bar-box {
+  background-color: #e7ebee;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.status-bar {
+  height: 100%;
+  background-color: black;
+}
+
+.status-bar.hp {
+  background-color: #ff0000;
+}
+
+.status-bar.attack {
+  background-color: #f08030;
+}
+
+.status-bar.defense {
+  background-color: #f8d030;
+}
+
+.status-bar.special-attack {
+  background-color: #6890f0;
+}
+
+.status-bar.special-defense {
+  background-color: #78c850;
+}
+
+.status-bar.speed {
+  background-color: #f85888;
+}
