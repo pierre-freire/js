@@ -104,13 +104,13 @@ const Home: React.FunctionComponent<IHomeProps> = (props) => {
         <img className="general" src={pokemon?.sprites.front} alt="" />
         <div className="search general">
           <input className="search-input" onChange={(e) => {searchOnChange(e.target.value)}} value={search} placeholder="inform a name"/>
-          {pokemonList.length > 0 && <div className="search-suggestion">
+          {pokemonList.length > 0 && <ul className="search-suggestion">
             {pokemonList.map((elm: { name: string, url: string}, key) => {
               return(
-                <p key={key} className='search-suggestion-item' onClick={() => handleSearchElement(elm.name)}>{elm.name}</p>
+                <li key={key} className='search-suggestion-item' onClick={() => handleSearchElement(elm.name)}>{elm.name}</li>
               )
             })}
-          </div>}
+          </ul>}
         </div>
         <div className="button-box">
           <button onClick={() => ButtonClick('previous')} className={`button-box--button ${pokemon?.id === 1 ? 'disabled' : ''}`}>previous</button>
